@@ -1,0 +1,262 @@
+:root{
+    --bgcolor:#353A40;
+    --colortext: #ffffff;
+    --bgbtn: #29a744;
+    --bgcuadro:#353a40a2;
+    --bgbtn1: #FF5733;
+    --bgbtn2: #17A2B7;
+    --bgbtn3: #353A40;
+    --bgbtn4: #DC3443;
+
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family:Arial, Helvetica, sans-serif;
+    letter-spacing: .05em;
+    & p{
+        font-size: 13px;
+    }
+}
+header{
+    background-color: var(--bgcolor);
+    color: var(--colortext);
+    height: 4em;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    .logo{
+        display: inline-block;
+        padding-left: 2em;
+        & img {
+            height: 4em;
+            vertical-align:middle;
+        }
+        & h2{
+            display: inline-block;
+        }
+    }
+    & nav{
+        float: right;
+        padding: 1.3em 2em;
+        & a{
+            text-decoration: none;
+            color: var(--colortext);
+            margin: 0 .5em;
+        }
+        .ticket{
+            color: var(--bgbtn);
+        }
+    }
+}
+main {
+    .conferencia {
+        position: relative;
+        & img {
+            filter: brightness(0.5);
+            width: 100%;
+        }
+        .cuadro-texto {
+            width: 80vh;
+            position: absolute;
+            top: 30vh;
+            color:var(--colortext);
+            text-align: right;
+            padding: 1.5em 2em;
+            background-color: var(--bgcuadro);
+            right: 5vh;
+            line-height: 1.5em;
+            border-radius: 0.5em;
+            & p {
+                margin: 2em 0;
+            }
+            & a {
+                border: 1px solid var(--colortext);
+                text-decoration: none;
+                color: var(--colortext);
+                padding: 0.5em 1em;
+                border-radius: 0.5em;
+                margin:0 0.5em;
+            }
+            .btncolor{
+                background-color: var(--bgbtn);
+                border-color: var(--bgbtn);
+            }
+        }
+    }
+    #oradores{
+        background-color: aqua;
+        height: 10em;
+    }
+    #lugar{
+        background-color:blue;
+        height: 10em;
+
+    }
+    #expone{
+        background-color:blueviolet;
+        height: 10em;
+    }
+}
+
+.grid-content{
+    display:grid;
+    grid-template-areas:  'orador orador'
+                'paisaje descrip'
+                'formulario formulario';
+   grid-template-columns: 50% 50%;
+   grid-template-rows: auto auto auto;
+   
+.item-1 {
+    grid-area: orador;
+    & .titulo {
+        text-align: center;
+        margin: 2em;
+        & h2{
+        margin-top: 0.3em;
+        }
+    }
+    .tarjetas { 
+        display: flex;
+        flex-flow: row wrap ;
+        justify-content: space-evenly;
+        padding-bottom: 2em;
+
+        & div[class^='card'] {
+            width:280px;
+            border: 1px solid var(--bgcuadro);
+        padding: 1em;
+        border-radius: 0.5em; 
+            & img {
+                width:100%;
+                padding-bottom: 1.5em;
+                
+            }
+            & .bot-card{
+                text-align: center;
+            }
+            & a{
+                margin-right: 1em;
+                text-decoration: none;
+                padding: 0.5em;
+                border-radius: 0.5em;
+                margin:0 0.5em;
+                color: var(--colortext);
+            
+            }
+            & .card-btn1 {
+                background-color: var(--bgbtn1);
+                border: 1px solid var(--bgbtn1);
+            }
+            & .card-btn2 {
+                background-color: var(--bgbtn2);
+                border: 1px solid var(--bgbtn2);
+            }
+            & .card-btn3 {
+                background-color: var(--bgbtn3);
+                border: 1px solid var(--bgbtn3);
+            }
+            & .card-btn4 {
+                background-color: var(--bgbtn4);
+                border: 1px solid var(--bgbtn4);
+            }    
+            & h2{
+                   padding-top: 1.2em;
+            }
+            & p{
+                padding-top: 1.5em;
+            }
+        
+        }
+        
+        
+    }  
+}
+.item-2{
+    grid-area: paisaje;
+    & img{ 
+            width: 100%;
+            height: 100%;
+        }
+}
+.item-3{
+    grid-area: descrip;
+    background-color: var(--bgcolor);
+    color:var(--colortext);
+    padding: 1.5em 2em;
+    line-height: 1.5em;
+    
+
+    & p {
+        margin: 2em 0;
+        
+    }
+    & a {
+        border: 1px solid var(--colortext);
+        text-decoration: none;
+        color: var(--colortext);
+        padding: 0.5em 1em;
+        border-radius: 0.5em;
+        margin:0 0.5em;
+    }
+.item-4{
+    grid-area: formulario;
+}
+   
+
+}
+.item-4{
+    grid-area: formulario;
+    & .titulo {
+        text-align: center;
+        margin: 2em;
+        & h2{
+            margin: 0.5em 0;
+        }
+     }
+    & .formulario {
+        padding: 1em;
+        text-align: center;
+       
+        & .form input {
+            border:1px solid var(--bgcolor);
+            border-radius: 5px;
+            margin: 10px 25px ;
+            width: 250px;
+            
+            padding: 0.5em 1em;
+        }
+        & .form input[type=textarea] {
+            width: 550px;
+            height: 100px;
+        }
+        & p{
+            margin: 1em;
+        }
+        & .form input[type=submit] {
+            background-color: var(--bgbtn);
+            color: var(--colortext);
+            font-weight: bold;
+            font-size: 20px;
+            padding:  0.25em 1em;
+            
+        }
+    }
+
+}
+}
+foter{
+    display: flex;
+    flex-flow: row wrap ;
+    justify-content: space-evenly;
+    background-color: var(--bgcolor) ;
+    height: 4em;
+    & a{
+    color: var(--colortext);
+    padding-top: 1.5em;
+    text-decoration: none;
+    }
+
+}
